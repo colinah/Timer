@@ -18,12 +18,41 @@ class TimerDisplay extends Component {
     startHandler = () => {
         this.setState({timerRunning: true });
     };
+    decrementHandler = () => {
+        if(this.state.timerRunning) {
+            if(this.state.hours === 0 && this.state.minutes === 0 && this.state.seconds === 0){
+                clearInterval()
+                this.setState({seconds:15,timerRunning:false})
+            } else if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
+                this.setState(prevState => {
+                    return {
+                        seconds: 59,
+                        minutes: 59,
+                        hours: prevState.hours - 1}
+                })
+            } else if(this.state.minutes > 0 && this.state.seconds === 0){
+                this.setState(prevState => {
+                    return {
+                        seconds: 59,
+                        minutes: prevState.minutes - 1}
+                })
+            } else if(this.state.seconds > 0 ){
+                this.setState(prevState => {
+                    return {
+                        seconds: prevState.seconds - 1}
+                })
+            }
+        }
+    };
 
     render () {
         return (
             <div className={classes.TimerDisplay}>
                 <Timer 
-                    timerRunning={this.state.timerRunning}
+                    decrement = {this.decrementHandler}
+                    seconds = {this.state.seconds}
+                    minutes = {this.state.minutes}
+                    hours = {this.state.hours}
                 />
                 <TimerControls 
                   stop = { this.stopHandler } 
