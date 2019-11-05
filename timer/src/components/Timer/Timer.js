@@ -4,9 +4,9 @@ import classes from './Timer.module.css';
 class Timer extends Component {
     state = {
         //Must always be in seconds
-        seconds: 50,
-        minutes: 1,
-        hours: 1
+        seconds: 5,
+        minutes: 0,
+        hours: 0
     }
 
     componentDidMount(){
@@ -16,7 +16,9 @@ class Timer extends Component {
     
 
     decrementHandler = () => {
-         if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
+        if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
+            clearInterval()
+        } else if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
             this.setState(prevState => {
                 return {
                     seconds: 59,
