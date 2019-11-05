@@ -5,7 +5,7 @@ import TimerControls from '../TimerControls/TimerControls';
 
 class TimerDisplay extends Component {
     state = {
-        seconds: 0,
+        seconds: 10,
         minutes: 0,
         hours: 0,
         timerRunning: true
