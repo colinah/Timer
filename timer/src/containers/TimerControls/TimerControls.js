@@ -7,8 +7,8 @@ class TimerControls extends Component {
     render() {
         return (
             <div className = { classes.TimerControls }>
+                <Button clicked={this.props.stop}>Stop</Button>
                 <Button clicked = {this.props.start}>Start</Button>
-                <Button>Stop</Button>
                 <Button>Reset</Button>
                 <Button>Lap</Button>
                 <Button>Settings</Button>
