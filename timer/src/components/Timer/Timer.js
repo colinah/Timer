@@ -6,7 +6,7 @@ class Timer extends Component {
         //Must always be in seconds
         seconds: 3,
         minutes: 1,
-        hours: 30
+        hours: 1
     }
 
     componentDidMount(){
