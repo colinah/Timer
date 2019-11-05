@@ -2,11 +2,6 @@ import React , {Component} from 'react';
 import classes from './Timer.module.css';
 
 class Timer extends Component {
-
-    componentDidMount(){
-        setInterval( this.props.decrement,1000)
-    }
-    
     render () {
         let secs = this.props.seconds;
         if(secs < 10){

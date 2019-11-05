@@ -5,19 +5,32 @@ import TimerControls from '../TimerControls/TimerControls';
 
 class TimerDisplay extends Component {
     state = {
-        seconds: 10,
-        minutes: 10,
+        initialTime: {
+            seconds: 10,
+            minutes: 10,
+            hours: 10
+        },
+        seconds: 0,
+        minutes: 0,
         hours: 0,
-        timerRunning: true
+        timerRunning: false,
+        interval: null
     }
-
+    
+    startHandler = () => {
+        if(!this.state.timerRunning){
+            this.setState({timerRunning: true });
+            this.setState ({interval: setInterval(() => {
+            this.decrementHandler()
+        }, 1000)})
+        } 
+    };
 
     stopHandler = () => {
-        this.setState({timerRunning: false});
+        clearInterval(this.state.interval)
+        this.setState({timerRunning: false, interval: null});
     };
-    startHandler = () => {
-        this.setState({timerRunning: true });
-    };
+
     decrementHandler = () => {
         if(this.state.timerRunning) {
             if(this.state.hours === 0 && this.state.minutes === 0 && this.state.seconds === 0){
