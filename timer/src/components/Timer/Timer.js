@@ -16,26 +16,28 @@ class Timer extends Component {
     
 
     decrementHandler = () => {
-        if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
-            clearInterval()
-        } else if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
-            this.setState(prevState => {
-                return {
-                    seconds: 59,
-                    minutes: 59,
-                    hours: prevState.hours - 1}
-            })
-        } else if(this.state.minutes > 0 && this.state.seconds === 0){
-            this.setState(prevState => {
-                return {
-                    seconds: 59,
-                    minutes: prevState.minutes - 1}
-            })
-        } else if(this.state.seconds > 0 ){
-            this.setState(prevState => {
-                return {
-                    seconds: prevState.seconds - 1}
-            })
+        if(this.props.timerRunning){
+            if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
+                clearInterval()
+            } else if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
+                this.setState(prevState => {
+                    return {
+                        seconds: 59,
+                        minutes: 59,
+                        hours: prevState.hours - 1}
+                })
+            } else if(this.state.minutes > 0 && this.state.seconds === 0){
+                this.setState(prevState => {
+                    return {
+                        seconds: 59,
+                        minutes: prevState.minutes - 1}
+                })
+            } else if(this.state.seconds > 0 ){
+                this.setState(prevState => {
+                    return {
+                        seconds: prevState.seconds - 1}
+                })
+            }
         }
     }
 
