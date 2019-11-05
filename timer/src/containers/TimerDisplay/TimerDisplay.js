@@ -14,11 +14,10 @@ class TimerDisplay extends Component {
 
     stopHandler = () => {
         this.setState({timerRunning: false});
-
+    };
     startHandler = () => {
-        this.setState({timerRunning: true })
-
-    }
+        this.setState({timerRunning: true });
+    };
 
     render () {
         return (
