@@ -38,10 +38,22 @@ class Timer extends Component {
     }
 
     render () {
-        
+        let secs = this.state.seconds;
+        if(secs < 10){
+            secs = '0' + secs
+        }
+        let mins = this.state.minutes;
+        if(mins < 10){
+            mins = '0' + mins
+        }
+        let hrs = this.state.hours;
+        if(hrs < 10){
+            hrs = '0' + hrs
+        }
+        console.log(secs.length)
         return (
             <div className={classes.Timer}>
-                <h4>{this.state.hours}:{this.state.minutes}:{this.state.seconds}</h4>
+                <h4>{hrs}:{mins}:{secs}</h4>
             </div>
         )
     }
