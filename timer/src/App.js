@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import TimerDisplay from './containers/Timer/TimerDisplay';
+import TimerDisplay from './containers/TimerDisplay/TimerDisplay';
 
 function App() {
   return (
