@@ -17,8 +17,9 @@ class Timer extends Component {
 
     decrementHandler = () => {
         if(this.props.timerRunning) {
-            if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
+            if(this.state.hours === 0 && this.state.minutes === 0 && this.state.seconds === 0){
                 clearInterval()
+                this.setState({seconds:15})
             } else if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
                 this.setState(prevState => {
                     return {
@@ -54,7 +55,6 @@ class Timer extends Component {
         if(hrs < 10){
             hrs = '0' + hrs
         }
-        console.log(secs.length)
         return (
             <div className={classes.Timer}>
                 <h4>{hrs}:{mins}:{secs}</h4>

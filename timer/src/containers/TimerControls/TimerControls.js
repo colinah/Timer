@@ -7,11 +7,24 @@ class TimerControls extends Component {
     render() {
         return (
             <div className = { classes.TimerControls }>
-                <Button clicked={this.props.stop}>Stop</Button>
-                <Button clicked = {this.props.start}>Start</Button>
-                <Button>Reset</Button>
-                <Button>Lap</Button>
-                <Button>Settings</Button>
+                <Button 
+                    clicked = {this.props.start}
+                    btnType = 'Start'
+                    >Start</Button>
+                <Button 
+                    clicked={this.props.stop}
+                    btnType = 'Stop'
+                    >Stop</Button>
+                <br/>
+                <Button
+                    btnType = 'Reset'
+                    >Reset</Button>
+                <Button
+                    btnType = 'Lap'
+                    >Lap</Button>
+                <Button
+                    btnType = 'Settings'
+                    >Settings</Button>
             </div>
         )
     }

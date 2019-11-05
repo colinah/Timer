@@ -21,11 +21,14 @@ class TimerDisplay extends Component {
 
     render () {
         return (
-            <div className={classes.Timer}>
-                <Timer timerRunning={this.state.timerRunning}/>
+            <div className={classes.TimerDisplay}>
+                <Timer 
+                    timerRunning={this.state.timerRunning}
+                />
                 <TimerControls 
                   stop = { this.stopHandler } 
-                  start = { this.startHandler } />
+                  start = { this.startHandler } 
+                />
             </div>
         )
     }
