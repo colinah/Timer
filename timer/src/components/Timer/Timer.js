@@ -4,7 +4,7 @@ import classes from './Timer.module.css';
 class Timer extends Component {
     state = {
         //Must always be in seconds
-        seconds: 3,
+        seconds: 50,
         minutes: 1,
         hours: 1
     }
