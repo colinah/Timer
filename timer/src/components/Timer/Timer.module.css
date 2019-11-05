@@ -1,6 +1,18 @@
 .Timer {
     color: red;
-    font-size: 32px;
+    font-size: 54px;
     background-color: white;
+    margin-top: 0px;
+    margin-bottom: 36px;
+    padding-top: 0;
+    transform: scale(1,2);
+    height: 100%;
+    width: 100%;
 
+
+}
+
+.Timer h4 {
+    height: 100%;
+    width: 100%;
 }

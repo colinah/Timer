@@ -57,7 +57,7 @@ class Timer extends Component {
         }
         return (
             <div className={classes.Timer}>
-                <h4>{hrs}:{mins}:{secs}</h4>
+                <p>{hrs}:{mins}:{secs}</p>
             </div>
         )
     }
