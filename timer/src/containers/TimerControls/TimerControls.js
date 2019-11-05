@@ -7,7 +7,7 @@ class TimerControls extends Component {
         return (
             <div className = { classes.TimerControls }>
                 <Button>Start</Button>
-                <Button>Stop</Button>
+                <Button clicked={this.props.stop}>Stop</Button>
                 <Button>Reset</Button>
                 <Button>Lap</Button>
                 <Button>Settings</Button>
@@ -16,4 +16,4 @@ class TimerControls extends Component {
     }
 }
 
-export default timerControls;
+export default TimerControls;
