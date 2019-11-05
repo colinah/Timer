@@ -5,7 +5,8 @@ import classes from './TimerControls.module.css';
 const timerControls = () => {
     return (
         <div className = { classes.TimerControls }>
-            <Button>Start/Stop</Button>
+            <Button>Start</Button>
+            <Button>Stop</Button>
             <Button>Reset</Button>
             <Button>Lap</Button>
             <Button>Settings</Button>
