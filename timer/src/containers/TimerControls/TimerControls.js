@@ -18,6 +18,7 @@ class TimerControls extends Component {
                 <br/>
                 <Button
                     btnType = 'Reset'
+                    clicked = {this.props.reset}
                     >Reset</Button>
                 <Button
                     btnType = 'Lap'
