@@ -1,7 +1,6 @@
 .Timer {
-    color: red;
+    color: rgb(58, 58, 58);
     font-size: 54px;
-    background-color: white;
     margin-top: 0px;
     margin-bottom: 36px;
     padding-top: 0;
@@ -10,6 +9,11 @@
     width: 100%;
 
 
+}
+
+.Red {
+    color: red;
+    background-color: aqua;
 }
 
 .Timer h4 {

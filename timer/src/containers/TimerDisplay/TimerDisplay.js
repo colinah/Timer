@@ -42,11 +42,16 @@ class TimerDisplay extends Component {
     };
 
     resetHandler = () => {
-        let newState = {...this.state};
-        newState.seconds = this.state.initialTime.seconds
-        newState.minutes = this.state.initialTime.minutes
-        newState.hours = this.state.initialTime.hours
-        this.setState({...newState})
+            const newState = {...this.state};
+            newState.seconds = this.props.location.state.seconds;
+            newState.minutes = this.props.location.state.minutes;
+            newState.hours = this.props.location.state.hours;
+            this.setState({...newState})
+        // let newState = {...this.state};
+        // newState.seconds = this.state.initialTime.seconds
+        // newState.minutes = this.state.initialTime.minutes
+        // newState.hours = this.state.initialTime.hours
+        // this.setState({...newState})
     }
 
     settingsHandler = () => {
@@ -56,8 +61,7 @@ class TimerDisplay extends Component {
     decrementHandler = () => {
         if(this.state.timerRunning) {
             if(this.state.hours === 0 && this.state.minutes === 0 && this.state.seconds === 0){
-                clearInterval()
-                this.setState({seconds:15,timerRunning:false})
+                this.stopHandler();
             } else if(this.state.hours > 0 && this.state.minutes === 0 && this.state.seconds === 0){
                 this.setState(prevState => {
                     return {

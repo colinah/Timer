@@ -15,8 +15,14 @@ class Timer extends Component {
         if(hrs < 10){
             hrs = '0' + hrs
         }
+        console.log('hrs: ' , hrs, ' mins: ' , mins, ' secs: ' , secs)
+        let timerClasses = classes.Timer
+        if(hrs === '00' && mins === '00' && secs < 6){
+            timerClasses = [classes.Timer, classes.Red].join(' ')
+            console.log(timerClasses)
+        }
         return (
-            <div className={classes.Timer}>
+            <div className={timerClasses}>
                 <p>{hrs}:{mins}:{secs}</p>
             </div>
         )
