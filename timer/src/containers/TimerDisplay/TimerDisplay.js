@@ -87,17 +87,17 @@ class TimerDisplay extends Component {
     render () {
         return (
             <div className={classes.TimerDisplay}>
-                <TimerControls 
-                  stop = {this.stopHandler} 
-                  start = {this.startHandler} 
-                  reset = {this.resetHandler}
-                  settings = {this.settingsHandler}
-                />
                 <Timer 
                     decrement = {this.decrementHandler}
                     seconds = {this.state.seconds}
                     minutes = {this.state.minutes}
                     hours = {this.state.hours}
+                />
+                <TimerControls 
+                  stop = {this.stopHandler} 
+                  start = {this.startHandler} 
+                  reset = {this.resetHandler}
+                  settings = {this.settingsHandler}
                 />
             </div>
         )
