@@ -17,6 +17,16 @@ class TimerDisplay extends Component {
         interval: null
     }
     
+    componentDidMount(){
+        if(this.props.location.state){
+            const newState = {...this.state};
+            newState.seconds = this.props.location.state.seconds;
+            newState.minutes = this.props.location.state.minutes;
+            newState.hours = this.props.location.state.hours;
+            this.setState({...newState})
+        }
+    }
+
     startHandler = () => {
         if(!this.state.timerRunning){
             this.setState({timerRunning: true });
@@ -37,8 +47,10 @@ class TimerDisplay extends Component {
         newState.minutes = this.state.initialTime.minutes
         newState.hours = this.state.initialTime.hours
         this.setState({...newState})
-        console.log(this.state)
+    }
 
+    settingsHandler = () => {
+        this.props.history.push('/settings')
     }
 
     decrementHandler = () => {
@@ -75,6 +87,7 @@ class TimerDisplay extends Component {
                   stop = {this.stopHandler} 
                   start = {this.startHandler} 
                   reset = {this.resetHandler}
+                  settings = {this.settingsHandler}
                 />
                 <Timer 
                     decrement = {this.decrementHandler}

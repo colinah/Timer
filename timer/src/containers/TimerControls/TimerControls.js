@@ -24,6 +24,7 @@ class TimerControls extends Component {
                     btnType = 'Lap'
                     >Lap</Button>
                 <Button
+                    clicked = {this.props.settings}
                     btnType = 'Settings'
                     >Settings</Button>
             </div>

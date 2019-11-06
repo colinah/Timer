@@ -1,0 +1,15 @@
+.Layout {
+    margin: auto;
+    border: 1px solid #c5bebe;
+    width: 250px;
+    margin-top: 10px;
+    height: 400px;
+    text-align: center;
+}
+
+.Input {
+    display: inline;
+    background-color: blue;
+    width: 15px;
+    box-sizing: border-box;
+}
